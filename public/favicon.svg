@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="West Coast Production">
+  <rect width="32" height="32" rx="6" fill="#050506"/>
+  <g fill="#c8ccd2">
+    <rect x="8.6" y="15.05" width="14.8" height="1.9" rx="0.95" transform="rotate(45 16 16)"/>
+    <rect x="8.6" y="15.05" width="14.8" height="1.9" rx="0.95" transform="rotate(-45 16 16)"/>
+    <circle cx="8.5" cy="8.5" r="3.4"/>
+    <circle cx="23.5" cy="8.5" r="3.4"/>
+    <circle cx="8.5" cy="23.5" r="3.4"/>
+    <circle cx="23.5" cy="23.5" r="3.4"/>
+    <path d="M16 11.05 L20.95 16 L16 20.95 L11.05 16 Z"/>
+  </g>
+</svg>

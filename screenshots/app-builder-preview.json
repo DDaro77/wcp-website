@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "West Coast Production",
+      "hasCanvas": false,
+      "bodyTextLen": 3153,
+      "bodyTextHash": "9a9326b453d1da574e76193b1e8a59fa04861a5f4dfadb94422f149e9c046a73",
+      "bodyTextPrefix": "WCP CRAFT WORK SCALE CONTACT BOOK A SHOOT IRELAND · 53.2707° N, ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "West Coast Production",
+      "hasCanvas": false,
+      "bodyTextLen": 3115,
+      "bodyTextHash": "20698ad7a3cd5f5517ae49707646a922f06046c4b81b542ecd925cd13d46ba45",
+      "bodyTextPrefix": "WCP IRELAND · 53.2707° N, 9.0568° W WCP WEST COAST PRODUCTION Th",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
