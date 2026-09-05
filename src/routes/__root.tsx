@@ -3,7 +3,7 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "West Coast Production";
+const APP_NAME = "West Coast Production | Video Production & Drone Filming Ireland";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -13,12 +13,12 @@ export const Route = createRootRoute({
       { title: APP_NAME },
       {
         name: "description",
-        content:
-          "West Coast Production — aerial cinematography, FPV, 360°, 8K stills and reels from the Atlantic edge of Ireland.",
+        "Cinematic video production, aerial cinematography and FPV drone filming in Ireland. West Coast Production creates films for tourism, property, brands and events.",
       },
       { name: "theme-color", content: "#050506" },
     ],
     links: [
+     { rel: "canonical", href: "https://westcoastproduction.ie/" },
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       { rel: "stylesheet", href: appCss },
       { rel: "manifest", href: "/__grok/manifest.webmanifest" },
