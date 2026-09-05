@@ -13,7 +13,7 @@ export const Route = createRootRoute({
       { title: APP_NAME },
       {
         name: "description",
-        "Cinematic video production, aerial cinematography and FPV drone filming in Ireland. West Coast Production creates films for tourism, property, brands and events.",
+       content: "Cinematic video production, aerial cinematography and FPV drone filming in Ireland. West Coast Production creates films for tourism, property, brands and events.",
       },
       { name: "theme-color", content: "#050506" },
     ],
