@@ -5,7 +5,20 @@ import appCss from "../styles.css?url";
 
 const APP_NAME = "West Coast Production | Video Production & Drone Filming Ireland";
 
+function NotFound() {
+  return (
+    <main className="mx-auto flex min-h-screen max-w-xl flex-col justify-center px-6">
+      <title>Page not found | West Coast Production</title>
+      <meta name="robots" content="noindex, nofollow" />
+      <h1 className="text-3xl font-medium text-fg">Page not found</h1>
+      <p className="mt-4 text-muted">This page is not on westcoastproduction.ie.</p>
+      <a className="mt-8 text-fg underline" href="/">Back to the homepage</a>
+    </main>
+  );
+}
+
 export const Route = createRootRoute({
+  notFoundComponent: NotFound,
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -18,7 +31,6 @@ export const Route = createRootRoute({
       { name: "theme-color", content: "#050506" },
     ],
     links: [
-     { rel: "canonical", href: "https://westcoastproduction.ie/" },
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       { rel: "stylesheet", href: appCss },
       { rel: "manifest", href: "/__grok/manifest.webmanifest" },

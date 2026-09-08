@@ -51,6 +51,36 @@ export const Route = createFileRoute("/")({
         content: "https://westcoastproduction.ie/og.jpg",
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "West Coast Production",
+          url: "https://westcoastproduction.ie/",
+          telephone: "+353860553070",
+          image: "https://westcoastproduction.ie/og.jpg",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Lisdoonvarna",
+            addressRegion: "County Clare",
+            addressCountry: "IE",
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: 53.0264,
+            longitude: -9.2906,
+          },
+          areaServed: ["County Clare", "County Galway", "Ireland"],
+          sameAs: [
+            "https://www.instagram.com/west_coast_production/",
+            "https://www.youtube.com/@west.coast.production",
+            "https://www.facebook.com/westcoastproduction/",
+          ],
+        }),
+      },
+    ],
     links: [
       {
         rel: "canonical",
