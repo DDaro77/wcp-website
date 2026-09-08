@@ -9,8 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TourismHospitalityRouteImport } from './routes/tourism-hospitality'
+import { Route as FpvRouteImport } from './routes/fpv'
+import { Route as DroneFilmingRouteImport } from './routes/drone-filming'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TourismHospitalityRoute = TourismHospitalityRouteImport.update({
+  id: '/tourism-hospitality',
+  path: '/tourism-hospitality',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FpvRoute = FpvRouteImport.update({
+  id: '/fpv',
+  path: '/fpv',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DroneFilmingRoute = DroneFilmingRouteImport.update({
+  id: '/drone-filming',
+  path: '/drone-filming',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,24 +37,36 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/drone-filming': typeof DroneFilmingRoute
+  '/fpv': typeof FpvRoute
+  '/tourism-hospitality': typeof TourismHospitalityRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/drone-filming': typeof DroneFilmingRoute
+  '/fpv': typeof FpvRoute
+  '/tourism-hospitality': typeof TourismHospitalityRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/drone-filming': typeof DroneFilmingRoute
+  '/fpv': typeof FpvRoute
+  '/tourism-hospitality': typeof TourismHospitalityRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/drone-filming' | '/fpv' | '/tourism-hospitality'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/drone-filming' | '/fpv' | '/tourism-hospitality'
+  id: '__root__' | '/' | '/drone-filming' | '/fpv' | '/tourism-hospitality'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DroneFilmingRoute: typeof DroneFilmingRoute
+  FpvRoute: typeof FpvRoute
+  TourismHospitalityRoute: typeof TourismHospitalityRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +78,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/drone-filming': {
+      id: '/drone-filming'
+      path: '/drone-filming'
+      fullPath: '/drone-filming'
+      preLoaderRoute: typeof DroneFilmingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fpv': {
+      id: '/fpv'
+      path: '/fpv'
+      fullPath: '/fpv'
+      preLoaderRoute: typeof FpvRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tourism-hospitality': {
+      id: '/tourism-hospitality'
+      path: '/tourism-hospitality'
+      fullPath: '/tourism-hospitality'
+      preLoaderRoute: typeof TourismHospitalityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DroneFilmingRoute: DroneFilmingRoute,
+  FpvRoute: FpvRoute,
+  TourismHospitalityRoute: TourismHospitalityRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

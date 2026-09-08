@@ -32,7 +32,7 @@ export function Nav() {
       )}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:h-[4.5rem] sm:px-8">
-        <a href="#top" className="flex items-center gap-3 min-h-11">
+        <a href="/" className="flex items-center gap-3 min-h-11">
           <img
             src="/wcp-badge.png"
             alt=""
@@ -54,7 +54,7 @@ export function Nav() {
             </a>
           ))}
           <Button asChild variant="default" size="cta">
-            <a href="#contact">Book a shoot</a>
+            <a href="/#contact">Book a shoot</a>
           </Button>
         </nav>
 
@@ -97,7 +97,7 @@ export function Nav() {
             </a>
           ))}
           <Button asChild size="cta" className="mt-4">
-            <a href="#contact" onClick={() => setOpen(false)}>
+            <a href="/#contact" onClick={() => setOpen(false)}>
               Book a shoot
             </a>
           </Button>

@@ -5,12 +5,12 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "West Coast Production | Cinematic Video & Drone Production Ireland",
+        title: "West Coast Production | Video & Drone Filming, Clare and Galway",
       },
       {
         name: "description",
         content:
-          "West Coast Production is an independent creative studio on the west coast of Ireland specialising in cinematic video, aerial cinematography, FPV drone filming and visual storytelling.",
+          "West Coast Production is a cinematic studio in Lisdoonvarna, County Clare. Aerial filming, FPV and tourism video for hotels, destinations and brands in Clare, Galway and along the Atlantic.",
       },
       {
         property: "og:title",
@@ -60,6 +60,7 @@ export const Route = createFileRoute("/")({
           name: "West Coast Production",
           url: "https://westcoastproduction.ie/",
           telephone: "+353860553070",
+          email: "info.westcoastproduction@gmail.com",
           image: "https://westcoastproduction.ie/og.jpg",
           address: {
             "@type": "PostalAddress",

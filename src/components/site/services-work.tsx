@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SERVICES, WORK } from "@/lib/site";
+import { OFFER_PAGES, SERVICES, WORK } from "@/lib/site";
 import { Container, Kicker, Reveal, SectionTitle } from "@/components/site/reveal";
 import {
   Dialog,
@@ -61,6 +61,17 @@ export function Services() {
                 <p className="mt-3 text-base leading-relaxed text-muted">
                   {current.body}
                 </p>
+                <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
+                  {OFFER_PAGES.map((page) => (
+                    <a
+                      key={page.href}
+                      href={page.href}
+                      className="text-sm text-fg underline underline-offset-4"
+                    >
+                      {page.label}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </Reveal>

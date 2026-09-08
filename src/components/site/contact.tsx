@@ -1,12 +1,12 @@
 import { useState, type FormEvent, type ReactNode } from "react";
 import { z } from "zod";
-import { Check, Instagram, Phone, Youtube } from "lucide-react";
+import { Check, Instagram, Mail, Phone, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Container, Kicker, Reveal, SectionTitle } from "@/components/site/reveal";
-import { PROJECT_TYPES, SITE } from "@/lib/site";
+import { OFFER_PAGES, PROJECT_TYPES, SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const schema = z.object({
@@ -98,6 +98,13 @@ export function Contact() {
               >
                 <Phone className="size-4 text-steel" />
                 <span className="text-lg">{SITE.phoneDisplay}</span>
+              </a>
+              <a
+                href={`mailto:${SITE.email}`}
+                className="flex min-h-11 items-center gap-3 text-fg transition-colors hover:text-steel"
+              >
+                <Mail className="size-4 text-steel" />
+                <span>{SITE.email}</span>
               </a>
               <a
                 href={SITE.instagram}
@@ -266,6 +273,13 @@ export function Footer() {
             <p className="mt-1 font-serif italic text-muted">{SITE.motto}</p>
           </div>
         </div>
+        <nav className="flex flex-wrap gap-x-5 gap-y-2" aria-label="Services">
+          {OFFER_PAGES.map((page) => (
+            <a key={page.href} href={page.href} className="text-sm text-muted hover:text-fg">
+              {page.label}
+            </a>
+          ))}
+        </nav>
         <p className="font-mono text-xs uppercase tracking-label text-subtle">
           Ireland · {SITE.coords}
         </p>

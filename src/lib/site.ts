@@ -13,13 +13,32 @@ export const SITE = {
   youtube: "https://www.youtube.com/@west.coast.production",
   facebook: "https://www.facebook.com/westcoastproduction/",
   instagramHandle: "@west_coast_production",
+  email: "info.westcoastproduction@gmail.com",
 };
 
+export const OFFER_PAGES = [
+  {
+    href: "/drone-filming",
+    label: "Drone filming",
+    line: "Aerial cinematography in Clare and Galway",
+  },
+  {
+    href: "/fpv",
+    label: "FPV",
+    line: "First-person drone filming in Ireland",
+  },
+  {
+    href: "/tourism-hospitality",
+    label: "Tourism",
+    line: "Hospitality and destination films on the west coast",
+  },
+] as const;
+
 export const NAV = [
-  { href: "#craft", label: "Craft" },
-  { href: "#work", label: "Work" },
-  { href: "#scale", label: "Scale" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#craft", label: "Craft" },
+  { href: "/#work", label: "Work" },
+  { href: "/#scale", label: "Scale" },
+  { href: "/#contact", label: "Contact" },
 ] as const;
 
 export const SCALE = [
