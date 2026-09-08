@@ -30,14 +30,15 @@ const empty: Fields = {
 export function Contact() {
   const [fields, setFields] = useState<Fields>(empty);
   const [errors, setErrors] = useState<Partial<Record<keyof Fields, string>>>({});
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [botField, setBotField] = useState("");
 
   function set<K extends keyof Fields>(key: K, value: Fields[K]) {
     setFields((f) => ({ ...f, [key]: value }));
     setErrors((e) => ({ ...e, [key]: undefined }));
   }
 
-  function onSubmit(e: FormEvent) {
+  async function onSubmit(e: FormEvent) {
     e.preventDefault();
     const parsed = schema.safeParse(fields);
     if (!parsed.success) {
@@ -52,12 +53,30 @@ export function Contact() {
       return;
     }
 
-    const existing = JSON.parse(
-      localStorage.getItem("wcp-inquiries") ?? "[]",
-    ) as unknown[];
-    existing.push({ ...parsed.data, at: new Date().toISOString() });
-    localStorage.setItem("wcp-inquiries", JSON.stringify(existing));
-    setSent(true);
+    setStatus("sending");
+    try {
+      const body = new URLSearchParams({
+        "form-name": "brief",
+        "bot-field": botField,
+        name: parsed.data.name,
+        email: parsed.data.email,
+        type: parsed.data.type,
+        location: parsed.data.location,
+        message: parsed.data.message,
+      });
+      const res = await fetch("/netlify-form.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
+      });
+      if (!res.ok) {
+        setStatus("error");
+        return;
+      }
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -70,7 +89,7 @@ export function Contact() {
             <p className="mt-5 max-w-md text-base leading-relaxed text-muted">
               West Coast Production is licensed by the Irish Aviation Authority
               and fully insured. Hotels, tourism, property, commercial, FPV,
-              360° — one operation.
+              360° across Clare and Galway — one operation.
             </p>
             <div className="mt-10 space-y-5">
               <a
@@ -107,7 +126,7 @@ export function Contact() {
           </Reveal>
 
           <Reveal delay={60}>
-            {sent ? (
+            {status === "sent" ? (
               <div className="flex min-h-80 flex-col justify-center rounded-xl border border-border bg-bg-elevated p-8">
                 <Check className="size-8 text-steel" />
                 <h3 className="mt-4 text-2xl font-medium text-fg">
@@ -123,6 +142,18 @@ export function Contact() {
               </div>
             ) : (
               <form onSubmit={onSubmit} className="space-y-5" noValidate>
+                <p className="sr-only" aria-hidden="true">
+                  <label>
+                    Do not fill this out
+                    <input
+                      name="bot-field"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={botField}
+                      onChange={(e) => setBotField(e.target.value)}
+                    />
+                  </label>
+                </p>
                 <Field label="Name" error={errors.name}>
                   <Input
                     name="name"
@@ -178,8 +209,18 @@ export function Contact() {
                     placeholder="What are we capturing, and when?"
                   />
                 </Field>
-                <Button type="submit" size="cta" className="w-full sm:w-auto">
-                  Send brief
+                {status === "error" ? (
+                  <p className="text-sm text-muted">
+                    The brief was not sent. Call {SITE.phoneDisplay} or try again.
+                  </p>
+                ) : null}
+                <Button
+                  type="submit"
+                  size="cta"
+                  className="w-full sm:w-auto"
+                  disabled={status === "sending"}
+                >
+                  {status === "sending" ? "Sending…" : "Send brief"}
                 </Button>
               </form>
             )}
