@@ -6,7 +6,7 @@ export const SITE = {
     "West Coast Production closes the gap between the Ireland you can walk and the Ireland only the sky can see — a west that still belongs to weather, stone, and light.",
   motto: "Capture. Create. Inspire.",
   location: "Lisdoonvarna, County Clare · Ireland",
-  coords: "53.2707° N, 9.0568° W",
+  coords: "53.0264° N, 9.2906° W",
   phoneDisplay: "086 055 3070",
   phoneTel: "+353860553070",
   instagram: "https://www.instagram.com/west_coast_production/",
