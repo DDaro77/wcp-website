@@ -94,16 +94,16 @@ function Page() {
     ],
     stronger: [
       {
-        title: "West coast, not a Dublin process page",
-        body: "Hotel-video pages that rank in Ireland are often Dublin studios with a process diagram and a national claim. They do not know this weather, this light, or this coast as a daily set.",
+        title: "The guest journey, not a facility tour",
+        body: "The film follows what makes the stay worth booking: arrival, space, food, landscape and the route into the place. The property is shown as an experience.",
       },
       {
-        title: "Video production in Clare and Galway",
-        body: "Local results lean studio, podcast, brand-explainer, or a commercial page that could sit in any county. This page is for buyers whose product is the place.",
+        title: "Built for the west coast",
+        body: "Clare and Galway sell through weather, light and landscape. We plan around those conditions instead of trying to make every property look like the same generic hotel campaign.",
       },
       {
-        title: "One film, every use",
-        body: "Separate social, web, and aerial vendors waste the shoot. One operation covers air, FPV, ground, stills, and the reels cut from the same days.",
+        title: "One shoot, multiple uses",
+        body: "Aerial, FPV, ground footage and stills can be captured as one production and cut for websites, booking pages, campaigns and social without sending separate crews.",
       },
     ],
     includes: [

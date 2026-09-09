@@ -83,9 +83,9 @@ export function OfferPage({ page }: { page: OfferPageData }) {
 
         <section className="border-t border-border py-20 sm:py-28">
           <Container>
-            <Kicker>What is missing elsewhere</Kicker>
+            <Kicker>Why this approach</Kicker>
             <SectionTitle className="mt-4 max-w-3xl">
-              The pages that rank now are useful. They are not this job.
+              One crew, planned around the finished film.
             </SectionTitle>
             <div className="mt-12 grid gap-10 lg:grid-cols-3">
               {page.stronger.map((item) => (

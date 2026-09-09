@@ -94,16 +94,16 @@ function Page() {
     ],
     stronger: [
       {
-        title: "Not the same as aerial",
-        body: "A stabilized camera drone looks at the place. FPV moves through it. National pages often mix the two, or sell FPV as a gadget line. This page is only the first-person job.",
+        title: "FPV with a purpose",
+        body: "Every line is designed around what the viewer needs to feel and where the shot sits in the finished film. Movement serves the story, not the pilot reel.",
       },
       {
-        title: "West coast, not a Dublin showreel",
-        body: "The pages that rank for FPV in Ireland are mostly Donegal, Dublin, or Northern Ireland operators with national claims. The gap is a west-coast studio that uses FPV inside cinematic commercial work.",
+        title: "West-coast terrain, planned properly",
+        body: "Cliffs, courtyards, roads and coastal structures need route planning, weather judgement and controlled speed. The flight is built around the location, not forced onto it.",
       },
       {
-        title: "Useful, not a doorways list",
-        body: "No separate Clare FPV page that only changes the county. If the brief is Clare, Galway, or elsewhere in Ireland, it starts here and on the brief.",
+        title: "FPV plus stabilized aerial",
+        body: "When a brief needs both speed and scale, FPV and stabilized aerial are planned together so the cut moves naturally from close motion to the wide Atlantic view.",
       },
     ],
     includes: [

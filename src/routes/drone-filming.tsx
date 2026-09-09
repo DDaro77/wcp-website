@@ -95,15 +95,15 @@ function Page() {
     stronger: [
       {
         title: "A film crew that flies",
-        body: "Most Clare and Galway results are drone operators, photo listings, or a county name swapped onto a national page. This is a production studio. The aerial is one camera, not the whole offer.",
+        body: "Aerial is planned as part of the finished film, alongside ground coverage, edit and delivery. The aircraft is a camera, not the product.",
       },
       {
-        title: "Place, not a hardware list",
-        body: "Ranking pages lead with aircraft and sample maps. Buyers here need to know the west coast is the subject: limestone, swell, last light, and a crew that lives beside it.",
+        title: "Built around Atlantic conditions",
+        body: "Coastal light and weather can change in minutes. Shoots are planned around usable windows so the landscape looks alive without turning the day into a gamble.",
       },
       {
-        title: "Clare and Galway in one operation",
-        body: "Two thin location pages would rank for a county and say nothing distinct. One page covers both coasts because the work is the same: Atlantic light, commercial use, a brief you can send today.",
+        title: "Clare and Galway from one base",
+        body: "Lisdoonvarna puts us between the Burren, the Atlantic coast and Galway. One crew can cover both counties without splitting the job across suppliers.",
       },
     ],
     includes: [

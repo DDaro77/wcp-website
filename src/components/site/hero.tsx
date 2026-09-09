@@ -40,10 +40,12 @@ export function Hero() {
         <p className="font-mono text-xs uppercase tracking-cinema text-steel">
           Ireland · {SITE.coords}
         </p>
-        <h1 className="metal mt-3 text-hero font-semibold uppercase">WCP</h1>
-        <p className="mt-1 text-lg font-medium uppercase tracking-cinema text-fg sm:text-xl">
+        <div className="metal mt-3 text-hero font-semibold uppercase" aria-hidden="true">
+          WCP
+        </div>
+        <h1 className="mt-1 text-lg font-medium uppercase tracking-cinema text-fg sm:text-xl">
           West Coast Production
-        </p>
+        </h1>
         <p className="mt-6 max-w-xl text-lg text-fg/90 sm:text-xl">
           {SITE.tagline}
         </p>
